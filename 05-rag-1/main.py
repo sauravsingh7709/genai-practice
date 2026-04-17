@@ -1,3 +1,5 @@
+# flake8: noqa
+
 from langchain_community.document_loaders import PyPDFLoader
 from pathlib import Path
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -34,7 +36,7 @@ embeddings = OpenAIEmbeddings(
 vector_store =QdrantVectorStore.from_documents(
     documents=split_docs,
     collection_name="vector_learning",
-    url="http://localhost:6333",
+    url="http://vector-db:6333",
     embedding=embeddings,
 )
 

@@ -1,3 +1,4 @@
+# flake8: noqa
 import os
 from dotenv import load_dotenv
 from pathlib import Path
@@ -16,15 +17,15 @@ embedding_model = OpenAIEmbeddings(
     model="text-embedding-3-small", 
 )
 
-vector_db= QdrantVectorStore.from_existing_collection(
-    url="http://localhost:6333",
+vector_store= QdrantVectorStore.from_existing_collection(
+    url="http://vector-db:6333",
     collection_name="vector_learning",
     embedding=embedding_model
 )
 
 query = input("> ")
 
-search_results = vector_db.similarity_search(
+search_results = vector_store.similarity_search(
     query=query
 )
 
