@@ -42,7 +42,7 @@ def main():
     
     #   mongodb://<username>:<pass>@<host>:<port>
     DB_URI = "mongodb://admin:admin@mongodb:27017"
-    config = {"configurable": {"thread_id": "2"}}
+    config = {"configurable": {"thread_id": "3"}}
     
     with MongoDBSaver.from_conn_string(DB_URI) as mongo_checkpointer:
         graph_with_mongo=compile_graph_with_checkpointer(mongo_checkpointer)
